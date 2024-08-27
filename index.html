@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .program {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .program:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .program {
+                padding: 10px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Development</h1>
+        <hr>
+        <div class="program" onclick="copyText('Program 1:                                                                ')">Program 1</div>
+        <div class="program" onclick="copyText('Program 2:                                                          ')">Program 2</div>
+        <div class="program" onclick="copyText('Program 3:                                                ')">Program 3</div>
+        <div class="program" onclick="copyText('Program 4:                                              ')">Program 4</div>
+        <div class="program" onclick="copyText('Program 5:                                         ')">Program 5</div>
+        <div class="program" onclick="copyText('Program 6                                ')">Program 6</div>
+    </div>
+
+    <script>
+        function copyText(text) {
+            const hiddenTextarea = document.createElement('textarea');
+            hiddenTextarea.value = text;
+            document.body.appendChild(hiddenTextarea);
+            hiddenTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(hiddenTextarea);
+            alert(`Copied: ${text.substring(0, 20)}...`); 
+        }
+    </script>
+</body>
+</html>
